@@ -20,13 +20,14 @@ const signUp = function(data) {
       });
     };
 
-    const changePassword = function(data) {
+    const changeXPassword = function(data) {
+        debugger;
           return $.ajax({
-          url: app.host + 'change-password/' + store.user.id,
+          url: app.host + 'change-password/' + store.player_x.user.id,
           method: 'PATCH',
           data,
           headers: {
-            Authorization: 'Token token=' + store.user.token,
+            Authorization: 'Token token=' + store.player_x.user.token,
           },
         });
       };
@@ -44,6 +45,6 @@ const signUp = function(data) {
 module.exports = {
   signUp,
   signIn,
-  changePassword,
+  changeXPassword,
   signOut,
 };

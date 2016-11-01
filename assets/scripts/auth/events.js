@@ -19,14 +19,14 @@ const onSignIn = function(e){
   $('#sign-in-modal').modal('hide');
 };
 
-const onChangePassword = function(e){
+const onXChangePassword = function(e){
   let data = getFormFields(this);
   e.preventDefault();
   debugger;
-  api.changePassword(data)
+  api.changeXPassword(data)
     .then(ui.success)
     .catch(ui.failure);
-  $('#change-password-modal').modal('hide');
+  $('#change-x-password-modal').modal('hide');
 };
 
 const onSignOut = function(e){
@@ -39,14 +39,14 @@ const onSignOut = function(e){
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
-  $('.change-password-form').on('submit', onChangePassword);
+  $('.change-x-password-form').on('submit', onXChangePassword);
   $('#sign-out-button').on('click', onSignOut);
 };
 
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePassword,
+  onXChangePassword,
   onSignOut,
   addHandlers,
 };
