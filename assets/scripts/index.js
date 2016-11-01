@@ -4,24 +4,17 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
+let auth = require('./auth/events.js')
 
 $(()=>{
-  $('.sign-up-form').on('submit', function(e){
-    e.preventDefault();
-    let email = $('#sign-up-email').val();
-    let password = $('#sign-up-password').val();
-    let confirmPassword = $('#confirm-password').val();
-    debugger;
-    $('#sign-up-modal').modal('hide');
-  });
+  $('.sign-up-form').on('submit', auth.onSignUp);
+
 
 
   $('.sign-in-form').on('submit', function(e){
     e.preventDefault();
     let email = $('#sign-in-email').val();
     let password = $('#sign-in-password').val();
-    debugger;
 
     $('#sign-in-modal').modal('hide');
   });
@@ -30,7 +23,6 @@ $(()=>{
     e.preventDefault();
     let oldPassword = $('#old-password').val();
     let newPassword = $('#new-password').val();
-    debugger;
 
     $('#change-password-modal').modal('hide');
   });

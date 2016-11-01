@@ -5,18 +5,15 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-const onSignUp = function (event) {
-  let data = getFormFields(this);
-  event.preventDefault();
-  api.signUp(data)
-    .then(ui.success)
-    .catch(ui.failure);
-};
-
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
+const onSignUp = function(e){
+  e.preventDefault();
+  let email = $('#sign-up-email').val();
+  let password = $('#sign-up-password').val();
+  let confirmPassword = $('#confirm-password').val();
+  debugger;
+  $('#sign-up-modal').modal('hide');
 };
 
 module.exports = {
-  addHandlers,
+  onSignUp,
 };
