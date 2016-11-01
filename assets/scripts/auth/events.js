@@ -10,6 +10,7 @@ const onSignUp = function(e){
   let email = $('#sign-up-email').val();
   let password = $('#sign-up-password').val();
   let confirmPassword = $('#confirm-password').val();
+  let user = api.signUp(email, password, confirmPassword);
   $('#sign-up-modal').modal('hide');
 };
 

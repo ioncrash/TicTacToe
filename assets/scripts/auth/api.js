@@ -1,15 +1,20 @@
 'use strict';
 
-const signUp = (data) =>
-  new Promise(function (resolve, reject) {
-    if (Math.random() > 0.5) {
-      resolve('in signUp');
-    } else {
-      let error = new Error('Random');
-      error.data = data;
-      reject(error);
-    }
-  });
+let app = require('../app.js');
+
+const signUp = function(email, password, confirmPassword) {
+    return $.ajax({
+      url: app.host + '/sign-up',
+      method: 'POST',
+      data: {
+        "credentials": {
+          "email": "an@example.email",
+          "password": "an example password",
+          "password_confirmation": "an example password"
+        }
+      }
+    });
+  };
 
 module.exports = {
   signUp,
