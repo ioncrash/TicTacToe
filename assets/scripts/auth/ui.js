@@ -18,7 +18,6 @@ const signInSuccess = (data) => {
   }
     debugger;
     success(data);
-  };
 };
 
 const failure = (error) => {
