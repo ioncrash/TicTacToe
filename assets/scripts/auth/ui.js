@@ -7,8 +7,18 @@ const success = (data) => {
 };
 
 const signInSuccess = (data) => {
-  store.user = data.user;
-  success(data);
+  if (!store.player_x) {
+    store.player_x = {
+      user: data.user
+    };
+  } else if (!store.player_o) {
+    store.player_o = {
+      user: data.user
+    };
+  }
+    debugger;
+    success(data);
+  };
 };
 
 const failure = (error) => {
