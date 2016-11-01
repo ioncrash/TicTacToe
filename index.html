@@ -34,6 +34,9 @@
                   <li><a ><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-x-password-modal">
                     Change player x password
                   </button></a></li>
+                  <li><a ><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-o-password-modal">
+                    Change player o password
+                  </button></a></li>
                   <li role="separator" class="divider"></li>
                   <li><button id="sign-out-button">Sign out</button></li>
                 </ul>
@@ -128,11 +131,36 @@
               <form class="change-x-password-form">
                 <div class="form-group">
                   <label>Old password</label>
-                  <input type="password" class="form-control" id="old-password" name="passwords[old]" placeholder="Old Password">
+                  <input type="password" class="form-control" id="old-x-password" name="passwords[old]" placeholder="Old Password">
                 </div>
                 <div class="form-group">
                   <label for="new-password">New password</label>
-                  <input type="password" class="form-control" id="new-password" name="passwords[new]" placeholder="New Password">
+                  <input type="password" class="form-control" id="new-x-password" name="passwords[new]" placeholder="New Password">
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="change-o-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Change password</h4>
+            </div>
+            <div class="modal-body">
+              <form class="change-o-password-form">
+                <div class="form-group">
+                  <label>Old password</label>
+                  <input type="password" class="form-control" id="old-o-password" name="passwords[old]" placeholder="Old Password">
+                </div>
+                <div class="form-group">
+                  <label for="new-password">New password</label>
+                  <input type="password" class="form-control" id="new-o-password" name="passwords[new]" placeholder="New Password">
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-default">Submit</button>
