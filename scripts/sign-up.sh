@@ -1,10 +1,19 @@
 #!/bin/bash
 
+# curl --include --request POST "http://localhost:4741/books/" \
+#   --header "Content-Type: application/json" \
+#   --data '{
+#     "book": {
+#       "title": "an example title",
+#       "author": "Rebekah"
+#     }
+#   }'
+
 #curl "http://localhost:3000/sign-up" \
-curl "http://httpbin.org/post" \
+curl "http://localhost:4741/sign-up" \
   --include \
   --request POST \
-  --data-urlencode ""
+  --data-urlencode ''
 
 # --header "Content-Type: application/x-www-form-urlencoded"
 
