@@ -5,7 +5,7 @@ const store = require('../store.js');
 
 const signUp = function(data) {
     return $.ajax({
-      url: app.host + '/sign-up',
+      url: app.host + 'sign-up',
       method: 'POST',
       data,
 
@@ -14,16 +14,16 @@ const signUp = function(data) {
 
   const signIn = function(data) {
       return $.ajax({
-        url: app.host + '/sign-in',
+        url: app.host + 'sign-in',
         method: 'POST',
         data,
       });
     };
 
     const changePassword = function(data) {
-        return $.ajax({
+          return $.ajax({
           url: app.host + 'change-password/' + store.user.id,
-          method: 'POST',
+          method: 'PATCH',
           data,
           headers: {
             Authorization: 'Token token=' + store.user.token,

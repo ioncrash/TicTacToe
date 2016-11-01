@@ -72,15 +72,15 @@
               <form class="sign-up-form">
                 <div class="form-group">
                   <label>Email address</label>
-                  <input type="email" class="form-control" id="sign-up-email" placeholder="Email">
+                  <input type="email" class="form-control" name="credentials[email]" id="sign-up-email" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="password-input">Password</label>
-                  <input type="password" class="form-control" id="sign-up-password" placeholder="Password">
+                  <input type="password" class="form-control" id="sign-up-password" name="credentials[password]" placeholder="Password">
                 </div>
                 <div class="form-group">
                   <label for="confirm-password">Confirm password</label>
-                  <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password">
+                  <input type="password" class="form-control" id="confirm-password" name="credentials[confirm_password]" placeholder="Confirm password">
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -102,11 +102,11 @@
               <form class="sign-in-form">
                 <div class="form-group">
                   <label>Email address</label>
-                  <input type="email" class="form-control" id="sign-in-email" placeholder="Email">
+                  <input type="email" class="form-control" id="sign-in-email" name="credentials[email]" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="password-input">Password</label>
-                  <input type="password" class="form-control" id="sign-in-password" placeholder="Password">
+                  <input type="password" class="form-control" id="sign-in-password" name="credentials[password]" placeholder="Password">
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -128,11 +128,11 @@
               <form class="change-password-form">
                 <div class="form-group">
                   <label>Old password</label>
-                  <input type="password" class="form-control" id="old-password" placeholder="old-password">
+                  <input type="password" class="form-control" id="old-password" name="passwords[old]" placeholder="Old Password">
                 </div>
                 <div class="form-group">
                   <label for="new-password">New password</label>
-                  <input type="password" class="form-control" id="new-password" placeholder="Password">
+                  <input type="password" class="form-control" id="new-password" name="passwords[new]" placeholder="New Password">
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-default">Submit</button>

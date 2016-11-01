@@ -1,47 +1,33 @@
 'use strict';
 
-const api = require('./api');
-const ui = require('./ui');
+const api = require('./api.js');
+const ui = require('./ui.js');
+const getFormFields = require('../../../lib/get-form-fields');
 
 const onSignUp = function(e){
   e.preventDefault();
 
-  let data = {
-    "credentials": {
-      "email": $('#sign-up-email').val(),
-      "password": $('#sign-up-password').val()
-    }
-  };
-  let confirmPassword = $('#confirm-password').val();
-  let user = api.signUp(data);
+  let data = getFormFields(this);
+  api.signUp(data).then(ui.success).catch(ui.failure);
   $('#sign-up-modal').modal('hide');
 };
 
 const onSignIn = function(e){
   e.preventDefault();
-  let data = {
-    "credentials": {
-      "email": $('#sign-in-email').val(),
-      "password": $('#sign-in-password').val()
-    }
-  };
-  api.signIn(data)
-    .then(ui.signInSuccess)
-    .catch(ui.failure);
+  let data = getFormFields(this);
+  debugger;
+  data = api.signIn(data).then(ui.signInSuccess).catch(ui.failure);
   $('#sign-in-modal').modal('hide');
 };
 
 const onChangePassword = function(e){
+  let data = getFormFields(this);
   e.preventDefault();
-  let data = {
-    "credentials": {
-      "old-password": $('#old-password').val(),
-      "password": $('#new-password').val(),
-    }
-  };
+  debugger;
   api.changePassword(data)
-    .then(ui.signInSuccess)
+    .then(ui.success)
     .catch(ui.failure);
+    debugger;
   $('#change-password-modal').modal('hide');
 };
 
