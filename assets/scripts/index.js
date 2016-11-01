@@ -11,13 +11,7 @@ $(()=>{
 
 
 
-  $('.sign-in-form').on('submit', function(e){
-    e.preventDefault();
-    let email = $('#sign-in-email').val();
-    let password = $('#sign-in-password').val();
-
-    $('#sign-in-modal').modal('hide');
-  });
+  $('.sign-in-form').on('submit', auth.onSignIn);
 
   $('.change-password-form').on('submit', function(e){
     e.preventDefault();

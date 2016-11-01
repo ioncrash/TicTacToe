@@ -14,6 +14,15 @@ const onSignUp = function(e){
   $('#sign-up-modal').modal('hide');
 };
 
+const onSignIn = function(e){
+  e.preventDefault();
+  let email = $('#sign-in-email').val();
+  let password = $('#sign-in-password').val();
+  debugger;
+  $('#sign-in-modal').modal('hide');
+};
+
 module.exports = {
   onSignUp,
+  onSignIn,
 };
