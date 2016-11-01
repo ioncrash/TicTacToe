@@ -15,7 +15,6 @@ const onSignUp = function(e){
 const onSignIn = function(e){
   e.preventDefault();
   let data = getFormFields(this);
-  debugger;
   data = api.signIn(data).then(ui.signInSuccess).catch(ui.failure);
   $('#sign-in-modal').modal('hide');
 };
@@ -27,12 +26,14 @@ const onChangePassword = function(e){
   api.changePassword(data)
     .then(ui.success)
     .catch(ui.failure);
-    debugger;
   $('#change-password-modal').modal('hide');
 };
 
 const onSignOut = function(e){
-  alert('you have signed out!');
+  e.preventDefault();
+  api.signOut()
+    .then(ui.success)
+    .catch(ui.failure);
 };
 
 const addHandlers = () => {

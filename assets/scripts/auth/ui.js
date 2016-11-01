@@ -8,7 +8,6 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  debugger;
   success(data);
 };
 
