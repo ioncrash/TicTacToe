@@ -21,6 +21,9 @@ const signInSuccess = (data) => {
       user: data.user
     };
     $('#player-x-bar').text('Player X: ' + store.player_x.user.email);
+    $('.change-pw-x-btn').removeClass('hidden');
+    $('divider').removeClass('hidden');
+    $('#sign-out-x-button').removeClass('hidden');
     displayStartButton();
   } else if (!store.player_o) {
     store.player_o = {
