@@ -3,13 +3,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $black: #000;
 $white: #fff;
 $red: #f00;
+$blue: #00f;
 
 .active-box {
   background-color: ($white, 12%);
 }
 
 .active-box:hover {
-  background-color: darken($red, 10%);
+  background-color: $white;
 }
 
 .box {
@@ -32,6 +33,19 @@ $red: #f00;
 }
 
 .x-box:hover {
+  background-color: darken($white, 12%);
+}
+
+.o-box {
+  background-color: darken($white, 12%);
+  color: darken($blue, 10%);
+  font-size: 290pt;
+  line-height: 300px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.o-box:hover {
   background-color: darken($white, 12%);
 }
 

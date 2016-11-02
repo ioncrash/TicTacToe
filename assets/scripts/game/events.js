@@ -4,6 +4,18 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const currentGame = require('../game.js');
 
+const changePlayer = function() {
+  if (currentGame.turn === 'x') {
+    currentGame.turn = 'o';
+  } else if (currentGame.turn === 'o') {
+    currentGame.turn = 'x';
+  }
+};
+
+const checkWin = function() {
+
+};
+
 const allBox = function(e) {
   e.preventDefault();
   $(this).text(currentGame.turn);
@@ -23,7 +35,8 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-  //changePlayer();
+  changePlayer();
+  checkWin(index);
 };
 
 
