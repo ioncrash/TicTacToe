@@ -9,7 +9,7 @@ const theyWon = function() {
   currentGame.current.game.over = true;
   alert("you won!");
   $('.box').off('click');
-
+$('#start-game-button').show();
 };
 
 const changePlayer = function() {
@@ -67,7 +67,11 @@ const addBoxHandlers = function() {
 
 const startGame = function() {
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
+  $('.box').text('');
+  $('.box').removeClass('x-box');
+  $('.box').removeClass('o-box');
   addBoxHandlers();
+
 };
 
 module.exports = {
