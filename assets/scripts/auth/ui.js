@@ -30,6 +30,9 @@ const signInSuccess = (data) => {
       user: data.user
     };
     $('#player-o-bar').text('Player O: ' + store.player_o.user.email);
+    $('.change-pw-o-btn').removeClass('hidden');
+    $('divider').removeClass('hidden');
+    $('#sign-out-o-button').removeClass('hidden');
     if (store.player_x) {
       gameEvents.joinGame();
     }
