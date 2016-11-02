@@ -5,6 +5,13 @@ const ui = require('./ui.js');
 const currentGame = require('../game.js');
 const check = require('./solutions.js');
 
+const theyWon = function() {
+  currentGame.current.game.over = true;
+  alert("you won!");
+  $('.box').off('click');
+
+};
+
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
     currentGame.turn = 'o';
@@ -20,7 +27,7 @@ const checkWin = function(index) {
   for (let i = 0; i < solutionSet.length; i++) {
         if (board[solutionSet[i][0]] === board[solutionSet[i][1]] &&
           board[solutionSet[i][0]] === currentGame.turn) {
-          return true;
+          theyWon();
         }
   }
   return false;
@@ -35,17 +42,17 @@ const allBox = function(e) {
 };
 
 const playerMove = function(index) {
+  checkWin(index);
   let data = {
   "game": {
     "cell": {
       "index": index,
       "value": currentGame.turn
       },
-    "over": false
+    "over": currentGame.current.game.over
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-  console.log(checkWin(index));
   changePlayer();
 };
 

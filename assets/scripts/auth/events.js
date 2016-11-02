@@ -16,7 +16,6 @@ const onSignIn = function(e){
   e.preventDefault();
   let data = getFormFields(this);
   data = api.signIn(data).then(ui.signInSuccess).catch(ui.failure);
-  debugger;
   $('#sign-in-modal').modal('hide');
 };
 

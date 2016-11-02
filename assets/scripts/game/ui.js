@@ -15,6 +15,7 @@ const failure = (error) => {
 const startGameSuccess = (data) => {
     currentGame.current = data;
     currentGame.turn = 'x';
+    $('#start-game-button').hide();
     success(data);
 };
 
