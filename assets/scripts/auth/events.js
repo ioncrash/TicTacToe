@@ -42,6 +42,7 @@ const onSignOutX = function(e){
   api.signOutX()
     .then(ui.success)
     .catch(ui.failure);
+  $('#player-x-bar').text('Player X: ');
 };
 
 const onSignOutO = function(e){
@@ -49,6 +50,7 @@ const onSignOutO = function(e){
   api.signOutO()
     .then(ui.success)
     .catch(ui.failure);
+  $('#player-o-bar').text('Player O: ');
 };
 
 const addHandlers = () => {
