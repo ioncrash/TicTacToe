@@ -1,6 +1,6 @@
 'use strict';
 
-const api = require('./api.js')
+const api = require('./api.js');
 
 const startGame = function() {
   api.createGame();
