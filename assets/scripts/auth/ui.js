@@ -16,7 +16,6 @@ const signInSuccess = (data) => {
       user: data.user
     };
   }
-    debugger;
     success(data);
 };
 

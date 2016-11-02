@@ -21,8 +21,7 @@ const signUp = function(data) {
     };
 
     const changeXPassword = function(data) {
-        debugger;
-          return $.ajax({
+        return $.ajax({
           url: app.host + 'change-password/' + store.player_x.user.id,
           method: 'PATCH',
           data,
@@ -33,8 +32,7 @@ const signUp = function(data) {
       };
 
       const changeOPassword = function(data) {
-          debugger;
-            return $.ajax({
+          return $.ajax({
             url: app.host + 'change-password/' + store.player_o.user.id,
             method: 'PATCH',
             data,
@@ -44,12 +42,12 @@ const signUp = function(data) {
           });
         };
 
-    const signOut = function() {
+    const signOutX = function() {
       return $.ajax({
-      url: app.host + 'sign-out/' + store.user.id,
+      url: app.host + 'sign-out/' + store.player_x.user.id,
       method: 'DELETE',
       headers: {
-        Authorization: 'Token token=' + store.user.token,
+        Authorization: 'Token token=' + store.player_x.user.token,
       },
     });
   };
@@ -59,5 +57,5 @@ module.exports = {
   signIn,
   changeXPassword,
   changeOPassword,
-  signOut,
+  signOutX,
 };

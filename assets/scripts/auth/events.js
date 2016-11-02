@@ -22,7 +22,6 @@ const onSignIn = function(e){
 const onXChangePassword = function(e){
   let data = getFormFields(this);
   e.preventDefault();
-  debugger;
   api.changeXPassword(data)
     .then(ui.success)
     .catch(ui.failure);
@@ -32,16 +31,15 @@ const onXChangePassword = function(e){
 const onOChangePassword = function(e){
   let data = getFormFields(this);
   e.preventDefault();
-  debugger;
   api.changeOPassword(data)
     .then(ui.success)
     .catch(ui.failure);
   $('#change-o-password-modal').modal('hide');
 };
 
-const onSignOut = function(e){
+const onSignOutX = function(e){
   e.preventDefault();
-  api.signOut()
+  api.signOutX()
     .then(ui.success)
     .catch(ui.failure);
 };
@@ -51,7 +49,7 @@ const addHandlers = () => {
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-x-password-form').on('submit', onXChangePassword);
   $('.change-o-password-form').on('submit', onOChangePassword);
-  $('#sign-out-button').on('click', onSignOut);
+  $('#sign-out-x-button').on('click', onSignOutX);
 };
 
 module.exports = {
@@ -59,6 +57,6 @@ module.exports = {
   onSignIn,
   onXChangePassword,
   onOChangePassword,
-  onSignOut,
+  onSignOutX,
   addHandlers,
 };
