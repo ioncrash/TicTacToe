@@ -45,6 +45,7 @@ const onSignOutX = function(e){
     .catch(ui.failure);
   $('#player-x-bar').text('Player X: ');
   store.player_x = null;
+  $("#start-game-button").hide();
 };
 
 const onSignOutO = function(e){
@@ -54,6 +55,7 @@ const onSignOutO = function(e){
     .catch(ui.failure);
   $('#player-o-bar').text('Player O: ');
   store.player_o = null;
+  $("#start-game-button").hide();
 };
 
 const addHandlers = () => {
