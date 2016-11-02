@@ -12,9 +12,11 @@ const startGameSuccess = (data) => {
     game.current = {
       data,
     };
-  }
-    debugger;
     success(data);
+  } else {
+    failure(data);
+  }
+
 };
 
 const failure = (error) => {
