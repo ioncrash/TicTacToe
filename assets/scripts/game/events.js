@@ -8,16 +8,17 @@ const store = require('../store.js');
 
 const theyWon = function() {
   currentGame.current.game.over = true;
-  alert("you won!");
   $('.box').off('click');
-$('#start-game-button').show();
-};
+  $('#start-game-button').show();
+  $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " wins!");
+  };
 
 const catsGame = function() {
   currentGame.current.game.over = true;
   alert("cat's game!");
   $('.box').off('click');
 $('#start-game-button').show();
+$('.status-row').text("Cat's game!");
 };
 
 const changePlayer = function() {
@@ -26,6 +27,7 @@ const changePlayer = function() {
   } else if (currentGame.turn === 'o') {
     currentGame.turn = 'x';
   }
+  $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " go!");
 };
 
 const checkWin = function(index) {
@@ -64,7 +66,7 @@ const playerMove = function(index) {
 
 const allBox = function(e) {
   e.preventDefault();
-  $(this).text(currentGame.turn);
+  $(this).text(currentGame.turn.toUpperCase());
   $(this).addClass(currentGame.turn + '-box');
   playerMove($(this).data("box-index"));
   $(this).off('click');
