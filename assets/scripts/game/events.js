@@ -89,13 +89,14 @@ const startGame = function() {
   currentGame.turnCount = 0;
   if (store.player_o) {
     addBoxHandlers();
+    $('.status-row').text("Player X, go!");
   }
-
 };
 
 const joinGame = function () {
   api.joinGame().then(ui.startGameSuccess).catch(ui.failure);
   addBoxHandlers();
+  $('.status-row').text("Player X, go!");
 };
 
 module.exports = {
