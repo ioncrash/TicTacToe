@@ -32,6 +32,18 @@ const signUp = function(data) {
         });
       };
 
+      const changeOPassword = function(data) {
+          debugger;
+            return $.ajax({
+            url: app.host + 'change-password/' + store.player_o.user.id,
+            method: 'PATCH',
+            data,
+            headers: {
+              Authorization: 'Token token=' + store.player_o.user.token,
+            },
+          });
+        };
+
     const signOut = function() {
       return $.ajax({
       url: app.host + 'sign-out/' + store.user.id,
@@ -40,11 +52,12 @@ const signUp = function(data) {
         Authorization: 'Token token=' + store.user.token,
       },
     });
-  }
+  };
 
 module.exports = {
   signUp,
   signIn,
   changeXPassword,
+  changeOPassword,
   signOut,
 };

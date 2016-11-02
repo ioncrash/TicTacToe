@@ -29,6 +29,16 @@ const onXChangePassword = function(e){
   $('#change-x-password-modal').modal('hide');
 };
 
+const onOChangePassword = function(e){
+  let data = getFormFields(this);
+  e.preventDefault();
+  debugger;
+  api.changeOPassword(data)
+    .then(ui.success)
+    .catch(ui.failure);
+  $('#change-o-password-modal').modal('hide');
+};
+
 const onSignOut = function(e){
   e.preventDefault();
   api.signOut()
@@ -40,6 +50,7 @@ const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-x-password-form').on('submit', onXChangePassword);
+  $('.change-o-password-form').on('submit', onOChangePassword);
   $('#sign-out-button').on('click', onSignOut);
 };
 
@@ -47,6 +58,7 @@ module.exports = {
   onSignUp,
   onSignIn,
   onXChangePassword,
+  onOChangePassword,
   onSignOut,
   addHandlers,
 };
