@@ -13,15 +13,10 @@ const failure = (error) => {
 };
 
 const startGameSuccess = (data) => {
-  if (!game.current) {
-    game.current = {
-      data,
-    };
+    game.current = data;
+    game.turn = 'x';
     success(data);
-  } else {
-    failure(data);
-  }
-
+    debugger;
 };
 
 module.exports = {
