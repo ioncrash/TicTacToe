@@ -8,7 +8,7 @@ const success = (data) => {
 
 const checkReady = function() {
   if (store.player_x && store.player_o) {
-    debugger;
+    $("#navbar-right-side").prepend('<li><button type="button" class="btn btn-primary btn-lg" id="start-game-button">Start game</button></li>');
   }
 };
 
