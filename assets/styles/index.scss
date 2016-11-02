@@ -1,6 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $black: #000;
+$white: #FFFFFF;
 
 .box {
   height: 300px;
@@ -11,4 +12,11 @@ $black: #000;
   margin: 1px 10px;
   text-align: center;
   width: 250px;
+}
+
+.versus-row {
+  background-color: $black;
+  color: $white;
+  font-size: 30px;
+  height: 50px;
 }
