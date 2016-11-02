@@ -5,7 +5,7 @@ $white: #fff;
 $red: #f00;
 
 .active-box {
-  background-color: darken($white, 12%);
+  background-color: ($white, 12%);
 }
 
 .active-box:hover {
@@ -14,8 +14,25 @@ $red: #f00;
 
 .box {
   border: 1px solid $black;
+  font-size: 290pt;
   height: 300px;
+  line-height: 300px;
+  text-align: center;
+  vertical-align: middle;
   width: 300px;
+}
+
+.x-box {
+  background-color: darken($white, 12%);
+  color: darken($red, 10%);
+  font-size: 290pt;
+  line-height: 300px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.x-box:hover {
+  background-color: darken($white, 12%);
 }
 
 .btn, .btn:hover {

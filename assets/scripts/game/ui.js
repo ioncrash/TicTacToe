@@ -16,7 +16,6 @@ const startGameSuccess = (data) => {
     game.current = data;
     game.turn = 'x';
     success(data);
-    debugger;
 };
 
 module.exports = {

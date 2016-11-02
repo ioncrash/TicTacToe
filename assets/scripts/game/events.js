@@ -2,10 +2,20 @@
 
 const api = require('./api.js');
 const ui = require('./ui.js');
+const game = require('../game.js');
+
+// const allBox = function(e) {
+//   e.preventDefault();
+//   $('[data-box-index=game.turn');
+//   debugger;
+// };
 
 const boxZero = function(e) {
   e.preventDefault();
-
+  if (game.turn === 'x') {
+    $('#box-0').text('x');
+    $('#box-0').addClass('x-box');
+  }
 };
 
 const boxOne = function(e) {
@@ -50,6 +60,7 @@ const boxEight = function(e) {
 
 const addBoxHandlers = function() {
   $('.box').addClass('active-box');
+  // $('.box').on('click', allBox);
   $('#box-0').on('click', boxZero);
   $('#box-1').on('click', boxOne);
   $('#box-2').on('click', boxTwo);
@@ -59,12 +70,12 @@ const addBoxHandlers = function() {
   $('#box-6').on('click', boxSix);
   $('#box-7').on('click', boxSeven);
   $('#box-8').on('click', boxEight);
+  // $('*[data-box-index=]');
 };
 
 const startGame = function() {
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   addBoxHandlers();
-  debugger;
 };
 
 module.exports = {
