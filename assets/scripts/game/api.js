@@ -14,6 +14,10 @@ const createGame = function() {
   });
 };
 
+const updateBoard = function(index) {
+  debugger;
+};
+
 module.exports = {
   createGame,
 };

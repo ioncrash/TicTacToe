@@ -2,7 +2,7 @@
 
 const api = require('./api.js');
 const ui = require('./ui.js');
-const game = require('../game.js');
+const currentGame = require('../game.js');
 
 // const allBox = function(e) {
 //   e.preventDefault();
@@ -10,11 +10,29 @@ const game = require('../game.js');
 //   debugger;
 // };
 
+const playerMove = function(index) {
+
+  currentGame.current.game.cells[index] = currentGame.turn;
+  debugger;
+  let data = {
+  "game": {
+    "cell": {
+      "index": index,
+      "value": currentGame.turn
+    },
+    "over": false
+  }
+};
+  api.updateBoard(data);
+};
+
 const boxZero = function(e) {
   e.preventDefault();
-  if (game.turn === 'x') {
+  if (currentGame.turn === 'x') {
     $('#box-0').text('x');
     $('#box-0').addClass('x-box');
+    playerMove(0);
+    // changePlayer();
   }
 };
 
