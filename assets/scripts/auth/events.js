@@ -3,6 +3,7 @@
 const api = require('./api.js');
 const ui = require('./ui.js');
 const getFormFields = require('../../../lib/get-form-fields');
+const store = require('../store.js');
 
 const onSignUp = function(e){
   e.preventDefault();
@@ -43,6 +44,7 @@ const onSignOutX = function(e){
     .then(ui.success)
     .catch(ui.failure);
   $('#player-x-bar').text('Player X: ');
+  store.player_x = null;
 };
 
 const onSignOutO = function(e){
@@ -51,6 +53,7 @@ const onSignOutO = function(e){
     .then(ui.success)
     .catch(ui.failure);
   $('#player-o-bar').text('Player O: ');
+  store.player_o = null;
 };
 
 const addHandlers = () => {
