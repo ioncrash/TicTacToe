@@ -9,9 +9,10 @@ $red: #f00;
   width: 300px;
 }
 
-.btn {
+.btn, .btn:hover {
   background-color: darken($red, 10%);
-  border-color: black;
+  border-color: $black;
+  color: darken($white, 12%);
   margin: 1px 10px;
   text-align: center;
   width: 250px;

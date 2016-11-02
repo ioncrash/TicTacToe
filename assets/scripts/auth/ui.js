@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store.js');
+const game = require('../game/events.js');
 
 const success = (data) => {
   console.log(data);
@@ -9,6 +10,10 @@ const success = (data) => {
 const checkReady = function() {
   if (store.player_x && store.player_o) {
     $("#navbar-right-side").prepend('<li><button type="button" class="btn btn-primary btn-lg" id="start-game-button">Start game</button></li>');
+    $("#start-game-button").on('click', function(event) {
+      event.preventDefault();
+      game.startGame();
+    });
   }
 };
 
