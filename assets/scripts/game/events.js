@@ -13,6 +13,13 @@ const theyWon = function() {
 $('#start-game-button').show();
 };
 
+const catsGame = function() {
+  currentGame.current.game.over = true;
+  alert("cat's game!");
+  $('.box').off('click');
+$('#start-game-button').show();
+};
+
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
     currentGame.turn = 'o';
@@ -34,16 +41,12 @@ const checkWin = function(index) {
   return false;
 };
 
-const allBox = function(e) {
-  e.preventDefault();
-  $(this).text(currentGame.turn);
-  $(this).addClass(currentGame.turn + '-box');
-  playerMove($(this).data("box-index"));
-  $(this).off('click');
-};
-
 const playerMove = function(index) {
   checkWin(index);
+  currentGame.turnCount++;
+  if (currentGame.turnCount === 9) {
+    catsGame();
+  }
   let data = {
   "game": {
     "cell": {
@@ -59,6 +62,18 @@ const playerMove = function(index) {
 
 
 
+const allBox = function(e) {
+  e.preventDefault();
+  $(this).text(currentGame.turn);
+  $(this).addClass(currentGame.turn + '-box');
+  playerMove($(this).data("box-index"));
+  $(this).off('click');
+};
+
+
+
+
+
 const addBoxHandlers = function() {
   $('.box').addClass('active-box');
   $('.box').on('click', allBox);
@@ -71,6 +86,7 @@ const startGame = function() {
   $('.box').text('');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
+  currentGame.turnCount = 0;
   if (store.player_o) {
     addBoxHandlers();
   }

@@ -12,6 +12,11 @@ const failure = (error) => {
   console.error(error);
 };
 
+const checkCats = function() {
+  let board = currentGame.current.game.cells;
+  return !(board.some((e) => e === ""));
+};
+
 const startGameSuccess = (data) => {
     currentGame.current = data;
     currentGame.turn = 'x';

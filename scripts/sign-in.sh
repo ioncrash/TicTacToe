@@ -7,7 +7,7 @@ curl "https://aqueous-atoll-85096.herokuapp.com/sign-in" \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "my@email.com",
-      "password": "123"
+      "email": "herp@derp.com",
+      "password": "herp"
     }
   }'

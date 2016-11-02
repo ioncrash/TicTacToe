@@ -4,6 +4,13 @@ const store = require('../store.js');
 const app = require('../app.js');
 const currentGame = require('../game.js');
 
+const getGame = function() {
+  return $.ajax({
+    url: app.host + 'games/7906',
+    method: 'GET'
+  });
+};
+
 const createGame = function() {
   return $.ajax({
     url: app.host + 'games',
