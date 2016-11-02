@@ -5,11 +5,11 @@ $white: #fff;
 $red: #f00;
 
 .active-box {
-  background-color: $black;
+  background-color: darken($white, 12%);
 }
 
 .active-box:hover {
-  background-color: darken($white, 12%);
+  background-color: darken($red, 10%);
 }
 
 .box {
