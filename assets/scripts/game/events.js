@@ -13,7 +13,6 @@ const currentGame = require('../game.js');
 const playerMove = function(index) {
 
   currentGame.current.game.cells[index] = currentGame.turn;
-  debugger;
   let data = {
   "game": {
     "cell": {
@@ -23,7 +22,8 @@ const playerMove = function(index) {
     "over": false
   }
 };
-  api.updateBoard(data);
+  api.updateBoard(data).then(ui.startGameSuccess).catch(ui.failure);
+  debugger;
 };
 
 const boxZero = function(e) {
