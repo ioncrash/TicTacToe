@@ -11,7 +11,6 @@ const createGame = function() {
     headers: {
       Authorization: 'Token token=' + store.player_x.user.token,
     }
-
   });
 };
 
