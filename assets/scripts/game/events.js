@@ -15,7 +15,6 @@ const theyWon = function() {
 
 const catsGame = function() {
   currentGame.current.game.over = true;
-  alert("cat's game!");
   $('.box').off('click');
 $('#start-game-button').show();
 $('.status-row').text("Cat's game!");
