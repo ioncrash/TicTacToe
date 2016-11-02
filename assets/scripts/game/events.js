@@ -3,6 +3,7 @@
 const api = require('./api.js');
 const ui = require('./ui.js');
 const currentGame = require('../game.js');
+const check = require('./solutions.js');
 
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
@@ -12,8 +13,17 @@ const changePlayer = function() {
   }
 };
 
-const checkWin = function() {
-
+const checkWin = function(index) {
+  let solutionSet = check.solutions[index];
+  let board = currentGame.current.game.cells;
+  // check each solution against the board
+  for (let i = 0; i < solutionSet.length; i++) {
+        if (board[solutionSet[i][0]] === board[solutionSet[i][1]] &&
+          board[solutionSet[i][0]] === currentGame.turn) {
+          return true;
+        }
+  }
+  return false;
 };
 
 const allBox = function(e) {
@@ -35,8 +45,8 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
+  console.log(checkWin(index));
   changePlayer();
-  checkWin(index);
 };
 
 
