@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const currentGame = require('../game.js');
 const check = require('./solutions.js');
+const store = require('../store.js');
 
 const theyWon = function() {
   currentGame.current.game.over = true;
@@ -70,10 +71,18 @@ const startGame = function() {
   $('.box').text('');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
-  addBoxHandlers();
+  if (store.player_o) {
+    addBoxHandlers();
+  }
 
+};
+
+const joinGame = function () {
+  api.joinGame().then(ui.startGameSuccess).catch(ui.failure);
+  addBoxHandlers();
 };
 
 module.exports = {
   startGame,
+  joinGame,
 };

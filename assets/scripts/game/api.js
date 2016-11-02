@@ -15,6 +15,17 @@ const createGame = function() {
   });
 };
 
+const joinGame = function() {
+  return $.ajax({
+    url: app.host + 'games/' + currentGame.current.game.id,
+    method: 'PATCH',
+    data: {},
+    headers: {
+      Authorization: 'Token token=' + store.player_o.user.token,
+    }
+  });
+};
+
 const updateBoard = function(data) {
   return $.ajax({
     url: app.host + 'games/' + currentGame.current.game.id,
@@ -29,4 +40,5 @@ const updateBoard = function(data) {
 module.exports = {
   createGame,
   updateBoard,
+  joinGame,
 };

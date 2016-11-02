@@ -27,7 +27,9 @@ const signInSuccess = (data) => {
       user: data.user
     };
     $('#player-o-bar').text('Player O: ' + store.player_o.user.email);
-    gameEvents.joinGame();
+    if (store.player_x) {
+      gameEvents.joinGame();
+    }
   }
     success(data);
 };
