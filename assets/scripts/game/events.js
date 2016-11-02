@@ -4,11 +4,14 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const currentGame = require('../game.js');
 
-// const allBox = function(e) {
-//   e.preventDefault();
-//   $('[data-box-index=game.turn');
-//   debugger;
-// };
+const allBox = function(e) {
+  e.preventDefault();
+  $(this).text(currentGame.turn);
+  $(this).addClass(currentGame.turn + '-box');
+  let boxNum = $(this).data("box-index");
+  debugger;
+  playerMove($(this).data("box-index"));
+};
 
 const playerMove = function(index) {
   let data = {
@@ -21,6 +24,7 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
+  debugger;
 };
 
 const boxZero = function(e) {
@@ -75,17 +79,16 @@ const boxEight = function(e) {
 
 const addBoxHandlers = function() {
   $('.box').addClass('active-box');
-  // $('.box').on('click', allBox);
-  $('#box-0').on('click', boxZero);
-  $('#box-1').on('click', boxOne);
-  $('#box-2').on('click', boxTwo);
-  $('#box-3').on('click', boxThree);
-  $('#box-4').on('click', boxFour);
-  $('#box-5').on('click', boxFive);
-  $('#box-6').on('click', boxSix);
-  $('#box-7').on('click', boxSeven);
-  $('#box-8').on('click', boxEight);
-  // $('*[data-box-index=]');
+  $('.box').on('click', allBox);
+  // $('#box-0').on('click', boxZero);
+  // $('#box-1').on('click', boxOne);
+  // $('#box-2').on('click', boxTwo);
+  // $('#box-3').on('click', boxThree);
+  // $('#box-4').on('click', boxFour);
+  // $('#box-5').on('click', boxFive);
+  // $('#box-6').on('click', boxSix);
+  // $('#box-7').on('click', boxSeven);
+  // $('#box-8').on('click', boxEight);
 };
 
 
