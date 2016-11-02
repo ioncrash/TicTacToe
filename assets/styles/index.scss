@@ -1,7 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $black: #000;
-$white: #FFFFFF;
+$white: #fff;
+$red: #f00;
 
 .box {
   height: 300px;
@@ -9,6 +10,8 @@ $white: #FFFFFF;
 }
 
 .btn {
+  background-color: darken($red, 10%);
+  border-color: black;
   margin: 1px 10px;
   text-align: center;
   width: 250px;
@@ -19,4 +22,12 @@ $white: #FFFFFF;
   color: $white;
   font-size: 30px;
   height: 50px;
+}
+
+.dropdown-menu {
+  background-color: $black;
+}
+
+.start-game-button {
+  background-color: $red;
 }
