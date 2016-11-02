@@ -11,19 +11,16 @@ const currentGame = require('../game.js');
 // };
 
 const playerMove = function(index) {
-
-  currentGame.current.game.cells[index] = currentGame.turn;
   let data = {
   "game": {
     "cell": {
       "index": index,
       "value": currentGame.turn
-    },
+      },
     "over": false
-  }
-};
-  api.updateBoard(data).then(ui.startGameSuccess).catch(ui.failure);
-  debugger;
+    }
+  };
+  api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
 };
 
 const boxZero = function(e) {
@@ -90,6 +87,8 @@ const addBoxHandlers = function() {
   $('#box-8').on('click', boxEight);
   // $('*[data-box-index=]');
 };
+
+
 
 const startGame = function() {
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);

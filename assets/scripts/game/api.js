@@ -17,9 +17,12 @@ const createGame = function() {
 
 const updateBoard = function(data) {
   return $.ajax({
-    url: app.host + 'games/' + currentGame.current.id,
+    url: app.host + 'games/' + currentGame.current.game.id,
     method: 'PATCH',
     data,
+    headers: {
+      Authorization: 'Token token=' + store.player_x.user.token,
+    }
   });
 };
 

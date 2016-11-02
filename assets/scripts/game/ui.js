@@ -1,6 +1,6 @@
 'use strict';
 
-const game = require('../game.js');
+const currentGame = require('../game.js');
 const gameEvents = require('./events.js');
 
 const success = (data) => {
@@ -13,13 +13,19 @@ const failure = (error) => {
 };
 
 const startGameSuccess = (data) => {
-    game.current = data;
-    game.turn = 'x';
+    currentGame.current = data;
+    currentGame.turn = 'x';
     success(data);
+};
+
+const updateBoardSuccess = (data) => {
+  currentGame.current = data;
+  success(data);
 };
 
 module.exports = {
   success,
   startGameSuccess,
+  updateBoardSuccess,
   failure,
 };
