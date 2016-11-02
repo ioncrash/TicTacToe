@@ -52,10 +52,21 @@ const signUp = function(data) {
     });
   };
 
+  const signOutO = function() {
+    return $.ajax({
+    url: app.host + 'sign-out/' + store.player_o.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.player_o.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   changeXPassword,
   changeOPassword,
   signOutX,
+  signOutO
 };

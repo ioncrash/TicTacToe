@@ -44,12 +44,20 @@ const onSignOutX = function(e){
     .catch(ui.failure);
 };
 
+const onSignOutO = function(e){
+  e.preventDefault();
+  api.signOutO()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-x-password-form').on('submit', onXChangePassword);
   $('.change-o-password-form').on('submit', onOChangePassword);
   $('#sign-out-x-button').on('click', onSignOutX);
+  $('#sign-out-o-button').on('click', onSignOutO);
 };
 
 module.exports = {
