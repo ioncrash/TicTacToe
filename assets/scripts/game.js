@@ -1,6 +1,6 @@
 'use strict';
 
-let game = undefined;
+let game;
 
 module.exports = {
   game,

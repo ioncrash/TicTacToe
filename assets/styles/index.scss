@@ -4,6 +4,14 @@ $black: #000;
 $white: #fff;
 $red: #f00;
 
+.active-box {
+  background-color: $black;
+}
+
+.active-box:hover {
+  background-color: darken($white, 12%);
+}
+
 .box {
   border: 1px solid $black;
   height: 300px;

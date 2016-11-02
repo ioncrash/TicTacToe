@@ -7,6 +7,11 @@ const success = (data) => {
   console.log(data);
 };
 
+const failure = (error) => {
+  $('#messages').text('fail');
+  console.error(error);
+};
+
 const startGameSuccess = (data) => {
   if (!game.current) {
     game.current = {
@@ -17,11 +22,6 @@ const startGameSuccess = (data) => {
     failure(data);
   }
 
-};
-
-const failure = (error) => {
-  $('#messages').text('fail');
-  console.error(error);
 };
 
 module.exports = {
