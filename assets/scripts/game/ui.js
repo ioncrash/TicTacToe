@@ -1,7 +1,6 @@
 'use strict';
 
 const currentGame = require('../game.js');
-const gameEvents = require('./events.js');
 
 const success = (data) => {
   console.log(data);

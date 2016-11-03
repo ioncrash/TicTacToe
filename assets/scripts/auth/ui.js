@@ -9,7 +9,7 @@ const success = (data) => {
 };
 
 const displayStartButton = function() {
-    $("#start-game-button").removeClass('hidden');
+
 };
 
 const signInSuccess = (data) => {
@@ -17,17 +17,18 @@ const signInSuccess = (data) => {
     store.player_x = {
       user: data.user
     };
+
     $('#player-x-bar').text('Player X: ' + store.player_x.user.email);
     $('.change-pw-x-btn').removeClass('hidden');
-    $('divider').removeClass('hidden');
     $('#sign-out-x-button').removeClass('hidden');
     $('#show-x-stats').removeClass('hidden');
-    $('.join-remote-game-btn').removeClass('hidden');
+    $("#start-game-button").removeClass('hidden');
+
     $("#start-game-button").show();
-    $('.join-remote-game-btn').show();
     $('.change-pw-x-btn').show();
     $('#show-x-stats').show();
     $('#sign-out-x-button').show();
+
     displayStartButton();
   } else if (!store.player_o) {
     store.player_o = {

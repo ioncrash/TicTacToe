@@ -62,8 +62,9 @@ const onSignOutX = function(e){
       .then(ui.signOutSuccess)
       .catch(ui.failure);
     }
-  $('#player-x-bar').text('Player X: ');
   store.player_x = null;
+
+  $('#player-x-bar').text('Player X: ');
   $("#start-game-button").hide();
   $('.change-pw-x-btn').hide();
   $('#show-x-stats').hide();
@@ -77,8 +78,9 @@ const onSignOutO = function(e){
       .then(ui.signOutSuccess)
       .catch(ui.failure);
     }
-  $('#player-o-bar').text('Player O: ');
   store.player_o = null;
+
+  $('#player-o-bar').text('Player O: ');
   $("#start-game-button").hide();
   $('.change-pw-o-btn').hide();
   $('#show-o-stats').hide();
