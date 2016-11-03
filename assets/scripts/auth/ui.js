@@ -26,6 +26,8 @@ const signInSuccess = (data) => {
     $('divider').removeClass('hidden');
     $('#sign-out-x-button').removeClass('hidden');
     $('#show-x-stats').removeClass('hidden');
+    $('.join-remote-game-btn').removeClass('hidden');
+    $('.join-remote-game-btn').show();
     $('.change-pw-x-btn').show();
     $('#show-x-stats').show();
     $('#sign-out-x-button').show();

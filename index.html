@@ -30,6 +30,9 @@
                   <li><a ><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-modal">
                     Sign in!
                   </button></a></li>
+                  <li><a ><button type="button" class="btn btn-primary btn-lg join-remote-game-btn hidden" data-toggle="modal" data-target="#join-game-modal">
+                    Join Remote Game
+                  </button></a></li>
                   <li><a ><button type="button" class="btn btn-primary btn-lg change-pw-x-btn hidden" data-toggle="modal" data-target="#change-x-password-modal">
                     Change player x password
                   </button></a></li>
@@ -75,6 +78,27 @@
           <div class="col-xs-4 box" data-box-index='7' id="box-7"></div>
           <div class="col-xs-4 box" data-box-index='8' id="box-8"></div>
         </div>
+      </div>
+
+      <div class="modal fade" id="join-game-modal" tabindex="-1" role="dialog" aria-labelledby="join-game-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Join Remote Game</h4>
+          </div>
+          <div class="modal-body">
+            <form class="sign-up-form">
+              <div class="form-group">
+                <label>Game number</label>
+                <input type="email" class="form-control" name="game-id" id="game-id" placeholder="Game number">
+              </div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
       </div>
 
         <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="sign-up-modal">
