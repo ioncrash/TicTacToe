@@ -93,8 +93,6 @@ webpackJsonp([0],[
 	  $('#player-x-bar').text('Player X: ');
 	  store.player_x = null;
 	  $("#start-game-button").hide();
-	  $('.change-pw-x-btn').hide();
-	  $('#sign-out-x-button').hide();
 	};
 
 	var onSignOutO = function onSignOutO(e) {
@@ -253,8 +251,6 @@ webpackJsonp([0],[
 	      user: data.user
 	    };
 	    $('#player-x-bar').text('Player X: ' + store.player_x.user.email);
-
-	    //update navbar
 	    $('.change-pw-x-btn').removeClass('hidden');
 	    $('divider').removeClass('hidden');
 	    $('#sign-out-x-button').removeClass('hidden');
@@ -263,13 +259,10 @@ webpackJsonp([0],[
 	    store.player_o = {
 	      user: data.user
 	    };
-
-	    //update navbar
 	    $('#player-o-bar').text('Player O: ' + store.player_o.user.email);
 	    $('.change-pw-o-btn').removeClass('hidden');
 	    $('divider').removeClass('hidden');
 	    $('#sign-out-o-button').removeClass('hidden');
-
 	    if (store.player_x) {
 	      gameEvents.joinGame();
 	    }
@@ -352,7 +345,7 @@ webpackJsonp([0],[
 	    }
 	  };
 	  api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-	  if (currentGame.current.game.over === false) {
+	  if (!currentGame.current.game.over) {
 	    changePlayer();
 	  }
 	};
