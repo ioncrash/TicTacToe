@@ -106,14 +106,14 @@ const startGame = function() {
   event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').text('');
-  $('.box').addClass('active-box');
-  $('.box').addClass('active-box-x');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
   currentGame.turnCount = 0;
   if (store.player_o) {
     addBoxHandlers();
     $('.status-row').text("Player X, go!");
+    $('.box').addClass('active-box');
+    $('.box').addClass('active-box-x');
   }
 };
 
