@@ -50,6 +50,15 @@ const onShowXStats = function(e) {
   // displayResults
 };
 
+const onShowOStats = function(e) {
+  e.preventDefault();
+  api.getOStats()
+  .then(ui.showOStatsSuccess)
+  .catch(ui.failure);
+
+  // displayResults
+};
+
 const onSignOutX = function(e){
   e.preventDefault();
   if (store.player_x) {
@@ -86,7 +95,7 @@ const addHandlers = () => {
   $('.change-x-password-form').on('submit', onXChangePassword);
   $('.change-o-password-form').on('submit', onOChangePassword);
   $('#show-x-stats').on('click', onShowXStats);
-
+  $('#show-o-stats').on('click', onShowOStats);
   $('#sign-out-x-button').on('click', onSignOutX);
   $('#sign-out-o-button').on('click', onSignOutO);
 };

@@ -63,6 +63,14 @@ const showXStatsSuccess = function(data) {
   success(data);
 };
 
+const showOStatsSuccess = function(data) {
+  store.player_o.stats = data;
+  let games = store.player_o.stats.games;
+  let numGames = games.length;
+  $('.status-row').text("O's total games: " + numGames);
+  success(data);
+};
+
 const failure = (error) => {
   $('#messages').text('fail');
   console.error(error);
@@ -75,4 +83,5 @@ module.exports = {
   success,
   signInSuccess,
   showXStatsSuccess,
+  showOStatsSuccess,
 };
