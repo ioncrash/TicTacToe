@@ -16,6 +16,7 @@ $blue: #00f;
 
 .box {
   border: 1px solid $black;
+  float: left;
   font-size: 290pt;
   height: 300px;
   text-align: center;
@@ -30,6 +31,11 @@ $blue: #00f;
   margin: 1px 10px;
   text-align: center;
   width: 250px;
+}
+
+.container {
+  height: 900px;
+  width: 1170px;
 }
 
 .dropdown-menu {
