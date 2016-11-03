@@ -31,8 +31,6 @@ const signInSuccess = (data) => {
     $('#show-x-stats').show();
     $('#sign-out-x-button').show();
     displayStartButton();
-
-
   } else if (!store.player_o) {
     store.player_o = {
       user: data.user
@@ -57,6 +55,12 @@ const signInSuccess = (data) => {
     success(data);
 };
 
+const showStatsSuccess = function(data) {
+  store.player_x.stats = data;
+  debugger;
+  success(data);
+};
+
 const failure = (error) => {
   $('#messages').text('fail');
   console.error(error);
@@ -68,4 +72,5 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  showStatsSuccess,
 };
