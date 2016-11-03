@@ -41,6 +41,13 @@ const onOChangePassword = function(e){
   $('#change-o-password-modal').modal('hide');
 };
 
+const onShowXStats = function(e) {
+  e.preventDefault();
+  // api.getXStats {
+  //
+  // }
+};
+
 const onSignOutX = function(e){
   e.preventDefault();
   if (store.player_x) {
@@ -52,6 +59,7 @@ const onSignOutX = function(e){
   store.player_x = null;
   $("#start-game-button").hide();
   $('.change-pw-x-btn').hide();
+  $('#show-x-stats').hide();
   $('#sign-out-x-button').hide();
 };
 
@@ -65,6 +73,9 @@ const onSignOutO = function(e){
   $('#player-o-bar').text('Player O: ');
   store.player_o = null;
   $("#start-game-button").hide();
+  $('.change-pw-o-btn').hide();
+  $('#show-o-stats').hide();
+  $('#sign-out-o-button').hide();
 };
 
 const addHandlers = () => {
@@ -72,6 +83,8 @@ const addHandlers = () => {
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-x-password-form').on('submit', onXChangePassword);
   $('.change-o-password-form').on('submit', onOChangePassword);
+  $('#show-x-stats').on('click', onShowXStats);
+
   $('#sign-out-x-button').on('click', onSignOutX);
   $('#sign-out-o-button').on('click', onSignOutO);
 };
