@@ -9,6 +9,14 @@ $blue: #00f;
   background-color: $white;
 }
 
+.active-box-x:hover {
+  background-color: darken($red, 10%);
+}
+
+.active-box-o:hover {
+  background-color: darken($blue, 10%);
+}
+
 .box {
   border: 1px solid $black;
   float: left;
