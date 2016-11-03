@@ -46,8 +46,6 @@ const onShowXStats = function(e) {
   api.getXStats()
   .then(ui.showXStatsSuccess)
   .catch(ui.failure);
-
-  // displayResults
 };
 
 const onShowOStats = function(e) {
@@ -55,8 +53,6 @@ const onShowOStats = function(e) {
   api.getOStats()
   .then(ui.showOStatsSuccess)
   .catch(ui.failure);
-
-  // displayResults
 };
 
 const onSignOutX = function(e){

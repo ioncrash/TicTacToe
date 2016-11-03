@@ -16,6 +16,8 @@ const startGameSuccess = (data) => {
     currentGame.current = data;
     currentGame.turn = 'x';
     $('#start-game-button').hide();
+    $('#forfeit-button').show();
+    $('#forfeit-button').removeClass('hidden');
     success(data);
 };
 
