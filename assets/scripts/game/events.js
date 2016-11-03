@@ -47,7 +47,7 @@ const checkWin = function(index) {
 const playerMove = function(index) {
   checkWin(index);
   currentGame.turnCount++;
-  if (currentGame.turnCount === 9) {
+  if (currentGame.turnCount === 9 && currentGame.current.game.over === false) {
     catsGame();
   }
   let data = {
@@ -89,8 +89,7 @@ const addBoxHandlers = function() {
 
 const startGame = function() {
   event.preventDefault();
-  debugger;
-  let data = api.createGame().then(ui.startGameSuccess).catch(ui.failure);
+  api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').text('');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
