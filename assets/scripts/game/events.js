@@ -58,7 +58,10 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-  changePlayer();
+  if (!currentGame.current.game.over)
+  {
+    changePlayer();
+  }
 };
 
 
