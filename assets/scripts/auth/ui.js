@@ -68,7 +68,14 @@ const showOStatsSuccess = function(data) {
   success(data);
 };
 
-const signOutSuccess = (data) => {
+const signOutXSuccess = (data) => {
+  store.player_x = null;
+  $('.sign-in-btn').show();
+  success(data);
+};
+
+const signOutOSuccess = (data) => {
+  store.player_o = null;
   $('.sign-in-btn').show();
   success(data);
 };
@@ -86,5 +93,6 @@ module.exports = {
   signInSuccess,
   showXStatsSuccess,
   showOStatsSuccess,
-  signOutSuccess,
+  signOutXSuccess,
+  signOutOSuccess
 };

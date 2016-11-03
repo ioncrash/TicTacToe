@@ -61,10 +61,9 @@ const onSignOutX = function(e){
   gameEvents.signOutX();
   if (store.player_x) {
     api.signOutX()
-      .then(ui.signOutSuccess)
+      .then(ui.signOutXSuccess)
       .catch(ui.failure);
     }
-  store.player_x = null;
 
   $('#player-x-bar').text('Player X: ');
   $("#start-game-button").hide();
@@ -78,10 +77,9 @@ const onSignOutO = function(e){
   gameEvents.signOutO();
   if (store.player_o) {
     api.signOutO()
-      .then(ui.signOutSuccess)
+      .then(ui.signOutOSuccess)
       .catch(ui.failure);
     }
-  store.player_o = null;
 
   $('#player-o-bar').text('Player O: ');
   $("#start-game-button").hide();
