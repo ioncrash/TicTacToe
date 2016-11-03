@@ -10,6 +10,7 @@ const theyWon = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
   $('#start-game-button').show();
+  $("#forfeit-button").hide();
   $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " wins!");
   };
 
@@ -17,6 +18,7 @@ const catsGame = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
 $('#start-game-button').show();
+$("#forfeit-button").hide();
 $('.status-row').text("Cat's game!");
 };
 
@@ -87,7 +89,8 @@ const addBoxHandlers = function() {
 
 const startGame = function() {
   event.preventDefault();
-  api.createGame().then(ui.startGameSuccess).catch(ui.failure);
+  debugger;
+  let data = api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').text('');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
@@ -98,6 +101,10 @@ const startGame = function() {
   }
 };
 
+const forfeitGame = () => {
+
+};
+
 const joinGame = function () {
   api.joinGame().then(ui.startGameSuccess).catch(ui.failure);
   addBoxHandlers();
@@ -106,6 +113,7 @@ const joinGame = function () {
 
 const addHandlers = () => {
   $("#start-game-button").on('click', startGame);
+  $("#forfeit-button").on('click', forfeitGame);
 };
 
 module.exports = {
