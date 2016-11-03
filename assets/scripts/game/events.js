@@ -25,8 +25,12 @@ $('.status-row').text("Cat's game!");
 
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
+    $('.active-box').removeClass('active-box-x');
+    $('.active-box').addClass('active-box-o');
     currentGame.turn = 'o';
   } else if (currentGame.turn === 'o') {
+    $('.active-box').removeClass('active-box-o');
+    $('.active-box').addClass('active-box-x');
     currentGame.turn = 'x';
   }
   $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " go!");
