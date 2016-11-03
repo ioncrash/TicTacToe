@@ -9,7 +9,7 @@ const success = (data) => {
 };
 
 const displayStartButton = function() {
-    $("#navbar-right-side").prepend('<li><button type="button" class="btn btn-primary btn-lg" id="start-game-button">Start game</button></li>');
+    $("#start-game-button").removeClass('hidden')
     $("#start-game-button").on('click', function(event) {
       event.preventDefault();
       gameEvents.startGame();
@@ -27,6 +27,7 @@ const signInSuccess = (data) => {
     $('#sign-out-x-button').removeClass('hidden');
     $('#show-x-stats').removeClass('hidden');
     $('.join-remote-game-btn').removeClass('hidden');
+    $("#start-game-button").show();
     $('.join-remote-game-btn').show();
     $('.change-pw-x-btn').show();
     $('#show-x-stats').show();
