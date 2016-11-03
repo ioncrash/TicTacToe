@@ -6,6 +6,7 @@ const currentGame = require('../game.js');
 const check = require('./solutions.js');
 const store = require('../store.js');
 
+
 const theyWon = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
@@ -111,6 +112,15 @@ const joinGame = function () {
   $('.status-row').text("Player X, go!");
 };
 
+const signOutX = () => {
+  if (currentGame.turn === 'o') {
+    theyWon();
+  } else if (currentGame.turn === 'x') {
+    forfeitGame();
+  }
+};
+
+
 const addHandlers = () => {
   $("#start-game-button").on('click', startGame);
   $("#forfeit-button").on('click', forfeitGame);
@@ -120,4 +130,5 @@ module.exports = {
   startGame,
   joinGame,
   addHandlers,
+  signOutX,
 };

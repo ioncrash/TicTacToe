@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store.js');
+const gameEvents = require('../game/events.js');
 
 const onSignUp = function(e){
   e.preventDefault();
@@ -57,6 +58,7 @@ const onShowOStats = function(e) {
 
 const onSignOutX = function(e){
   e.preventDefault();
+  gameEvents.signOutX();
   if (store.player_x) {
     api.signOutX()
       .then(ui.signOutSuccess)
