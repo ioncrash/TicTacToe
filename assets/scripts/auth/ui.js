@@ -2,6 +2,7 @@
 
 const store = require('../store.js');
 const gameEvents = require('../game/events.js');
+const currentGame = require('../game.js');
 
 const success = (data) => {
   console.log(data);
@@ -48,7 +49,7 @@ const signInSuccess = (data) => {
     $('#show-o-stats').show();
     $('#sign-out-o-button').show();
 
-    if (store.player_x) {
+    if (currentGame.current) {
       gameEvents.joinGame();
     }
   }
