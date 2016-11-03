@@ -24,8 +24,13 @@ $blue: #00f;
   width: 150px;
 
   @media (min-width: 768px) {
-    height: 250px;
-    width: 250px;
+    height: 255px;
+    width: 255px;
+  }
+
+  @media (min-width: 992px) {
+    height: 320px;
+    width: 320px;
   }
 }
 
@@ -43,9 +48,14 @@ $blue: #00f;
   width: 500px;
 
   @media (min-width: 768px) {
-    height: 750px;
+    height: 765px;
     width: 800px;
-  }
+  };
+
+  @media (min-width: 992px) {
+    height: 960px;
+    width: 1000px;
+  };
 }
 
 .dropdown-menu {
