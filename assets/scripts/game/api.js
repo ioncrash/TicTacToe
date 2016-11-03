@@ -4,7 +4,7 @@ const store = require('../store.js');
 const app = require('../app.js');
 const currentGame = require('../game.js');
 
-const getGame = function() {
+const getGames = function() {
   return $.ajax({
     url: app.host + 'games/7906',
     method: 'GET'
@@ -48,4 +48,5 @@ module.exports = {
   createGame,
   updateBoard,
   joinGame,
+  getGames,
 };

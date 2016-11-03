@@ -2,6 +2,7 @@
 
 const store = require('../store.js');
 const gameEvents = require('../game/events.js');
+const currentGame = require('../game.js');
 
 const success = (data) => {
   console.log(data);
@@ -24,6 +25,10 @@ const signInSuccess = (data) => {
     $('.change-pw-x-btn').removeClass('hidden');
     $('divider').removeClass('hidden');
     $('#sign-out-x-button').removeClass('hidden');
+    $('#show-x-stats').removeClass('hidden');
+    $('.change-pw-x-btn').show();
+    $('#show-x-stats').show();
+    $('#sign-out-x-button').show();
     displayStartButton();
   } else if (!store.player_o) {
     store.player_o = {
@@ -33,11 +38,34 @@ const signInSuccess = (data) => {
     $('.change-pw-o-btn').removeClass('hidden');
     $('divider').removeClass('hidden');
     $('#sign-out-o-button').removeClass('hidden');
-    if (store.player_x) {
+    $('#show-o-stats').removeClass('hidden');
+
+    $("#start-game-button").show();
+    $('.change-pw-o-btn').show();
+    $('#show-o-stats').show();
+    $('#sign-out-o-button').show();
+
+    if (currentGame.current) {
       gameEvents.joinGame();
     }
   }
     success(data);
+};
+
+const showXStatsSuccess = function(data) {
+  store.player_x.stats = data;
+  let games = store.player_x.stats.games;
+  let numGames = games.length;
+  $('.status-row').text("X's total games: " + numGames);
+  success(data);
+};
+
+const showOStatsSuccess = function(data) {
+  store.player_o.stats = data;
+  let games = store.player_o.stats.games;
+  let numGames = games.length;
+  $('.status-row').text("O's total games: " + numGames);
+  success(data);
 };
 
 const failure = (error) => {
@@ -51,4 +79,6 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  showXStatsSuccess,
+  showOStatsSuccess,
 };

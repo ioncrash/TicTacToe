@@ -13,27 +13,64 @@ $blue: #00f;
   background-color: $white;
 }
 
+
 .box {
   border: 1px solid $black;
+  float: left;
   font-size: 290pt;
-  height: 300px;
-  line-height: 300px;
+  height: 150px;
   text-align: center;
   vertical-align: middle;
-  width: 300px;
+  width: 150px;
+
+  @media (min-width: 768px) {
+    height: 255px;
+    width: 255px;
+  }
+
+  @media (min-width: 992px) {
+    height: 320px;
+    width: 320px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 380px;
+    width: 380px;
+  }
 }
 
-.x-box {
-  background-color: darken($white, 12%);
-  color: darken($red, 10%);
-  font-size: 290pt;
-  line-height: 300px;
+.btn,.btn:hover {
+  background-color: darken($red, 10%);
+  border-color: $black;
+  color: darken($white, 12%);
+  margin: 1px 10px;
   text-align: center;
-  vertical-align: middle;
+  width: 250px;
 }
 
-.x-box:hover {
-  background-color: darken($white, 12%);
+.container {
+  height: 450px;
+  width: 500px;
+
+  @media (min-width: 768px) {
+    height: 765px;
+    width: 800px;
+  };
+
+  @media (min-width: 992px) {
+    height: 960px;
+    width: 992px;
+  };
+
+  @media (min-width: 1200px) {
+    height: 1170px;
+    width: 1190px;
+  };
+}
+
+.dropdown-menu {
+  background-color: $black;
+  text-align: center;
 }
 
 .o-box {
@@ -49,13 +86,16 @@ $blue: #00f;
   background-color: darken($white, 12%);
 }
 
-.btn, .btn:hover {
-  background-color: darken($red, 10%);
-  border-color: $black;
-  color: darken($white, 12%);
-  margin: 1px 10px;
+.status-row {
+  background-color: $black;
+  color: $white;
+  font-size: 30px;
+  height: 50px;
   text-align: center;
-  width: 250px;
+}
+
+.start-game-button {
+  background-color: $red;
 }
 
 .versus-row {
@@ -65,18 +105,15 @@ $blue: #00f;
   height: 50px;
 }
 
-.status-row {
-  background-color: $black;
-  color: $white;
-  font-size: 30px;
-  height: 50px;
+.x-box {
+  background-color: darken($white, 12%);
+  color: darken($red, 10%);
+  font-size: 290pt;
+  line-height: 300px;
   text-align: center;
+  vertical-align: middle;
 }
 
-.dropdown-menu {
-  background-color: $black;
-}
-
-.start-game-button {
-  background-color: $red;
+.x-box:hover {
+  background-color: darken($white, 12%);
 }
