@@ -10,6 +10,9 @@ const store = require('../store.js');
 const theyWon = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
+  $('.active-box').removeClass('active-box');
+  $('.active-box-x').removeClass('active-box-x');
+  $('.active-box-o').removeClass('active-box-o');
   $('#start-game-button').show();
   $("#forfeit-button").hide();
   $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " wins!");
@@ -18,10 +21,13 @@ const theyWon = function() {
 const catsGame = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
-$('#start-game-button').show();
-$("#forfeit-button").hide();
-$('.status-row').text("Cat's game!");
-};
+  $('.active-box').removeClass('active-box');
+  $('.active-box-x').removeClass('active-box-x');
+  $('.active-box-o').removeClass('active-box-o');
+  $('#start-game-button').show();
+  $("#forfeit-button").hide();
+  $('.status-row').text("Cat's game!");
+  };
 
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
@@ -99,6 +105,7 @@ const addBoxHandlers = function() {
 const startGame = function() {
   event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
+  $('.box').text('');
   $('.box').addClass('active-box');
   $('.box').addClass('active-box-x');
   $('.box').removeClass('x-box');
