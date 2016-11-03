@@ -44,7 +44,7 @@ const onOChangePassword = function(e){
 const onShowXStats = function(e) {
   e.preventDefault();
   api.getXStats()
-  .then(ui.showStatsSuccess)
+  .then(ui.showXStatsSuccess)
   .catch(ui.failure);
 
   // displayResults
