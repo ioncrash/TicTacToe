@@ -43,9 +43,11 @@ const onOChangePassword = function(e){
 
 const onShowXStats = function(e) {
   e.preventDefault();
-  // api.getXStats {
-  //
-  // }
+  api.getXStats()
+  .then(ui.success)
+  .catch(ui.failure);
+
+  // displayResults
 };
 
 const onSignOutX = function(e){
