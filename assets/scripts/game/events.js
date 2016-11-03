@@ -94,6 +94,7 @@ const startGame = function() {
   event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').addClass('active-box');
+  $('.active-box').addClass('active-box-x');
   $('.box').removeClass('x-box');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');

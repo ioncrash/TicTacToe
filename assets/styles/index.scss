@@ -10,7 +10,7 @@ $blue: #00f;
 }
 
 .active-box-x:hover {
-  background-color: darken($red, 10%);
+  background-color: lighten($red, 40%);
 }
 
 .active-box-o:hover {
