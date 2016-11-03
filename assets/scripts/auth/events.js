@@ -74,7 +74,6 @@ const onSignOutX = function(e){
 
 const onSignOutO = function(e){
   e.preventDefault();
-  debugger;
   gameEvents.signOutO();
   if (store.player_o) {
     api.signOutO()

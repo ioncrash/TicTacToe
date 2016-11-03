@@ -24,8 +24,6 @@ const signInSuccess = (data) => {
     $('.change-pw-x-btn').show();
     $('#show-x-stats').show();
     $('#sign-out-x-button').show();
-
-    displayStartButton();
   } else if (!store.player_o) {
     store.player_o = {
       user: data.user
@@ -41,13 +39,14 @@ const signInSuccess = (data) => {
     $('#show-o-stats').show();
     $('#sign-out-o-button').show();
 
-    if (store.player_x && store.player_o) {
-      $('.sign-in-btn').hide();
-    }
-
     if (currentGame.current) {
       gameEvents.joinGame();
     }
+  }
+  debugger;
+  if (store.player_x && store.player_o) {
+    debugger;
+    $('.sign-in-btn').hide();
   }
     success(data);
 };
