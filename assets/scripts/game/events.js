@@ -76,6 +76,8 @@ const allBox = function(e) {
   $(this).addClass(currentGame.turn + '-box');
   playerMove($(this).data("box-index"));
   $(this).removeClass('active-box');
+  $(this).removeClass('active-box-x');
+  $(this).removeClass('active-box-o');
   $(this).off('click');
 };
 
@@ -94,8 +96,7 @@ const startGame = function() {
   event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').addClass('active-box');
-  $('.active-box').addClass('active-box-x');
-  $('.box').removeClass('x-box');
+  $('.box').addClass('active-box-x');
   $('.box').removeClass('x-box');
   $('.box').removeClass('o-box');
   currentGame.turnCount = 0;
