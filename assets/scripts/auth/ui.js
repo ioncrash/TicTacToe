@@ -26,6 +26,7 @@ const signInSuccess = (data) => {
     $('.change-pw-x-btn').removeClass('hidden');
     $('divider').removeClass('hidden');
     $('#sign-out-x-button').removeClass('hidden');
+    $('#show-x-stats').removeClass('hidden');
     displayStartButton();
 
 
@@ -39,7 +40,7 @@ const signInSuccess = (data) => {
     $('.change-pw-o-btn').removeClass('hidden');
     $('divider').removeClass('hidden');
     $('#sign-out-o-button').removeClass('hidden');
-
+    $('#show-o-stats').removeClass('hidden');
 
     if (store.player_x) {
       gameEvents.joinGame();
