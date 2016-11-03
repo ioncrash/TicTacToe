@@ -44,6 +44,10 @@ const signInSuccess = (data) => {
     $('#show-o-stats').show();
     $('#sign-out-o-button').show();
 
+    if (store.player_x && store.player_o) {
+      $('.sign-in-btn').hide();
+    }
+
     if (currentGame.current) {
       gameEvents.joinGame();
     }
@@ -67,6 +71,11 @@ const showOStatsSuccess = function(data) {
   success(data);
 };
 
+const signOutSuccess = (data) => {
+  $('.sign-in-btn').show();
+  success(data);
+};
+
 const failure = (error) => {
   $('#messages').text('fail');
   console.error(error);
@@ -80,4 +89,5 @@ module.exports = {
   signInSuccess,
   showXStatsSuccess,
   showOStatsSuccess,
+  signOutSuccess,
 };

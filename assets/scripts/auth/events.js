@@ -59,7 +59,7 @@ const onSignOutX = function(e){
   e.preventDefault();
   if (store.player_x) {
     api.signOutX()
-      .then(ui.success)
+      .then(ui.signOutSuccess)
       .catch(ui.failure);
     }
   $('#player-x-bar').text('Player X: ');
@@ -74,7 +74,7 @@ const onSignOutO = function(e){
   e.preventDefault();
   if (store.player_o) {
     api.signOutO()
-      .then(ui.success)
+      .then(ui.signOutSuccess)
       .catch(ui.failure);
     }
   $('#player-o-bar').text('Player O: ');
