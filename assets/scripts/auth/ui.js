@@ -76,6 +76,7 @@ const signOutXSuccess = (data) => {
 
 const signOutOSuccess = (data) => {
   store.player_o = null;
+  debugger;
   $('.sign-in-btn').show();
   success(data);
 };
