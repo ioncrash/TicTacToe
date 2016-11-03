@@ -38,14 +38,11 @@ const signInSuccess = (data) => {
     $('.change-pw-o-btn').show();
     $('#show-o-stats').show();
     $('#sign-out-o-button').show();
-
-    if (currentGame.current) {
+    if (currentGame.current.game.over === false) {
       gameEvents.joinGame();
     }
   }
-  debugger;
   if (store.player_x && store.player_o) {
-    debugger;
     $('.sign-in-btn').hide();
   }
     success(data);
@@ -75,7 +72,6 @@ const signOutXSuccess = (data) => {
 
 const signOutOSuccess = (data) => {
   store.player_o = null;
-  debugger;
   $('.sign-in-btn').show();
   success(data);
 };
