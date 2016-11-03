@@ -57,7 +57,19 @@ const signInSuccess = (data) => {
 
 const showStatsSuccess = function(data) {
   store.player_x.stats = data;
-  debugger;
+  let games = store.player_x.stats.games;
+  let numGames = games.length;
+  let numAsX = 0;
+  let numAsO = 0;
+  games.forEach(function(e) {
+    debugger;
+    if (e.player_x.email === store.player_x.user.email) {
+      numAsX++;
+    } else if (e.player_o.email === store.player_x.user.email) {
+      numAsO++;
+    }
+  });
+  console.log(numGames + " " + numAsX + " " + numAsO);
   success(data);
 };
 
