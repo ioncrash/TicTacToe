@@ -103,7 +103,15 @@ const joinGame = function () {
   $('.status-row').text("Player X, go!");
 };
 
+const addHandlers = () => {
+  $("#start-game-button").on('click', function(event) {
+    event.preventDefault();
+    startGame();
+  });
+}
+
 module.exports = {
   startGame,
   joinGame,
+  addHandlers,
 };
