@@ -69,12 +69,9 @@ const onSignOutX = function(e){
   $('#player-x-bar').text('Player X: ');
   store.player_x = null;
   $("#start-game-button").hide();
-<<<<<<< HEAD
-=======
   $('.change-pw-x-btn').hide();
   $('#show-x-stats').hide();
   $('#sign-out-x-button').hide();
->>>>>>> game
 };
 
 const onSignOutO = function(e){
