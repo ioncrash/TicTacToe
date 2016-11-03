@@ -6,24 +6,37 @@ const currentGame = require('../game.js');
 const check = require('./solutions.js');
 const store = require('../store.js');
 
+
 const theyWon = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
+  $('.active-box').removeClass('active-box');
+  $('.active-box-x').removeClass('active-box-x');
+  $('.active-box-o').removeClass('active-box-o');
   $('#start-game-button').show();
+  $("#forfeit-button").hide();
   $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " wins!");
   };
 
 const catsGame = function() {
   currentGame.current.game.over = true;
   $('.box').off('click');
-$('#start-game-button').show();
-$('.status-row').text("Cat's game!");
-};
+  $('.active-box').removeClass('active-box');
+  $('.active-box-x').removeClass('active-box-x');
+  $('.active-box-o').removeClass('active-box-o');
+  $('#start-game-button').show();
+  $("#forfeit-button").hide();
+  $('.status-row').text("Cat's game!");
+  };
 
 const changePlayer = function() {
   if (currentGame.turn === 'x') {
+    $('.active-box').removeClass('active-box-x');
+    $('.active-box').addClass('active-box-o');
     currentGame.turn = 'o';
   } else if (currentGame.turn === 'o') {
+    $('.active-box').removeClass('active-box-o');
+    $('.active-box').addClass('active-box-x');
     currentGame.turn = 'x';
   }
   $('.status-row').text("Player " + currentGame.turn.toUpperCase() + " go!");
@@ -45,7 +58,7 @@ const checkWin = function(index) {
 const playerMove = function(index) {
   checkWin(index);
   currentGame.turnCount++;
-  if (currentGame.turnCount === 9) {
+  if (currentGame.turnCount === 9 && currentGame.current.game.over === false) {
     catsGame();
   }
   let data = {
@@ -58,8 +71,9 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-  if (!currentGame.current.game.over)
-  {
+  if (currentGame.current.game.over) {
+    currentGame.current = null;
+  } else {
     changePlayer();
   }
 };
@@ -71,6 +85,9 @@ const allBox = function(e) {
   $(this).text(currentGame.turn.toUpperCase());
   $(this).addClass(currentGame.turn + '-box');
   playerMove($(this).data("box-index"));
+  $(this).removeClass('active-box');
+  $(this).removeClass('active-box-x');
+  $(this).removeClass('active-box-o');
   $(this).off('click');
 };
 
@@ -86,6 +103,7 @@ const addBoxHandlers = function() {
 
 
 const startGame = function() {
+  event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').text('');
   $('.box').removeClass('x-box');
@@ -94,7 +112,14 @@ const startGame = function() {
   if (store.player_o) {
     addBoxHandlers();
     $('.status-row').text("Player X, go!");
+    $('.box').addClass('active-box');
+    $('.box').addClass('active-box-x');
   }
+};
+
+const forfeitGame = () => {
+  changePlayer();
+  theyWon();
 };
 
 const joinGame = function () {
@@ -103,7 +128,32 @@ const joinGame = function () {
   $('.status-row').text("Player X, go!");
 };
 
+const signOutX = () => {
+  if (currentGame.turn === 'o') {
+    theyWon();
+  } else if (currentGame.turn === 'x') {
+    forfeitGame();
+  }
+};
+
+const signOutO = () => {
+  if (currentGame.turn === 'x') {
+    theyWon();
+  } else if (currentGame.turn === 'o') {
+    forfeitGame();
+  }
+};
+
+
+const addHandlers = () => {
+  $("#start-game-button").on('click', startGame);
+  $("#forfeit-button").on('click', forfeitGame);
+};
+
 module.exports = {
   startGame,
   joinGame,
+  addHandlers,
+  signOutO,
+  signOutX,
 };

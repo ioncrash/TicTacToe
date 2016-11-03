@@ -42,6 +42,26 @@ const signUp = function(data) {
           });
         };
 
+      const getXStats = function() {
+          return $.ajax({
+            url: app.host + 'games',
+            method: 'GET',
+            headers: {
+              Authorization: 'Token token=' + store.player_x.user.token,
+            },
+          });
+        };
+
+        const getOStats = function() {
+            return $.ajax({
+              url: app.host + 'games',
+              method: 'GET',
+              headers: {
+                Authorization: 'Token token=' + store.player_o.user.token,
+              },
+            });
+          };
+
     const signOutX = function() {
       return $.ajax({
       url: app.host + 'sign-out/' + store.player_x.user.id,
@@ -67,6 +87,8 @@ module.exports = {
   signIn,
   changeXPassword,
   changeOPassword,
+  getXStats,
+  getOStats,
   signOutX,
   signOutO
 };

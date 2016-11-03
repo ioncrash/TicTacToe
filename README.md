@@ -1,130 +1,26 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+Welcome to my Tic-Tac-Toe game!
 
-# API Token Authentication
+Here's a link to the game hosted on GitHub:
 
-## Introduction
+https://ioncrash.github.io/working-project/
 
-Using curl and jQuery.ajax to access an authenticated API with html forms to
-sign up, sign in, and sign out of an API. We'll also change our passwords. The
-API uses Token authentication and we'll see how to make authenticated request
-(sign out and change password).
+For this project I used:
 
-## Prerequisites
+Git, GitHub, Atom, JavaScript, JQuery, Ajax, CSS, HTML, Bootstrap, a Ruby on Rails server, a grunt server, and tested my code using Google Chrome and Mozilla Firefox.
 
--   jquery-ajax-*
+I started this project by making some wireframes which you can take a look at here:
 
-## Objectives
+http://imgur.com/Y2qmkOg
 
-By the end of this talk, developers should be able to:
+Obviously the game doesn't look much like that now. I decided to follow the path that a user would follow, and I made some user stories, which I wrote down here:
 
--   Use `curl` to access an authenticated API.
--   Use `$.ajax` to access an authenticated API.
+As a player, I want to find my friends so that I can play against them.
+As a player, I want to look up my past stats so that I can see how much time I've wasted.
+As a player, I want to change my password so that I can keep my exboyfriend out of my account.
+As a player, I want to sign in and out so that my new games are added to my history.
 
-## Instructions
+I decided to start where a user would start, with functions to sign up, sign in, change password, and sign out.
 
-1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone) this
-repository.
-1.  Create a new branch, `training`, for your work.
-1.  Install dependencies with `npm install`.
+This is where I ran into most of my problems, especially with getting the api data to store correctly on a local machine. My strategy to solve problems was to place lots of debuggers and check to see if the data was returning in the correct form. If that didn't help, I would first ask if anyone around me was having a similar problem, and then to run a google search for similar issues people had had in the past. I also used the closed issue threads for one or two problems. As the project went along I got much better at debugging problems in the console, and also at reading documentation.
 
-## Using web APIs
-
-Web APIs often require some sort of authentication.  The game API requires users
-to register and then login to gain an authentication token.
-
-We'll use `curl`, `httpbin.org`, and `jQuery.ajax` to explore HTTP further.
-The we'll connect to an authenticated API, [library-api](https://github.com/ga-wdi-boston/library-api).
-
-The operations we'll perform:
-
-| verb   | path                   | parameters |
-| ----   | ----                   | ---------- |
-| POST   | `/sign-up`             | `credentials` containing `email`, `password`, `password_confirmation` |
-| POST   | `/sign-in`             | `credentials` containing `email` and `password` (response contains auth data) |
-| PATCH  | `/change-password/:id` | `passwords` containing `old` and `new` (requires Authorization header) |
-| DELETE | `/sign-out/:id`        | None (requires Authorization header) |
-
-### Registering with the API
-
-#### Follow along: Use an Echo Server to Help Write Code
-
-First we'll test our command against an [echo server](http://httpbin.org/post)
-to make sure we're sending the right data. There's no need to use an actual
-e-mail address and don't use anything you might want to actually use as a
-password.
-
-We'll use `scripts/sign-up[-json].sh` to run curl, first sending JSON then
-sending data the way the browser does by default. We'll see how the server
-treats both ways of sending data (it's all just strings) in a similar way.
-
-If we left out the `--include` flag we wouldn't see the response header. What's
-the benefit of using an echo server?
-
-#### Code along: Write a sign-up script
-
-Next we'll want to actually register with the API.
-
-We'll modify `scripts/sign-up[-json].sh` to connect to the `library-api`.
-
-#### Code along: Sign-up from our client
-
-Now let's put code into `assests/scripts/auth/*` to get another "e-mail" address
-registered with the API.  We'll again start with the echo server.
-
-### Logging into the API
-
-#### Code along: Write a sign-in script
-
-Now with url encoded data in `scripts/sign-in.sh`, let's sign in to the account
-we just created.
-
-#### Lab: Sign-in from the client
-
-Add a form to `index.html` and code to `assets/scripts/auth/*` to login to the
-API. You may want to start by using the echo service to check your request.
-
-What should we do with the data returned by the API?
-
-### Changing the password
-
-#### Code along: Write/Execute a change-password scripts
-
-We'll use `scripts/change-password[-json].sh` to change a password. After that
-we'll verify that we can no longer authenticate using the old password.
-
-#### Lab: Change password from the client
-
-Add a change password form to `index.html` and code to `assets/scripts/auth/*`
-to change the password.
-
-### Signing out
-
-Signing out invalidates the the current token.
-
-#### Code along: Write/Execute a sign-out script
-
-We'll use `scripts/sign-out.sh` to sign out of the API. We'll verify that the
-token we used is no longer valid.
-
-#### Lab: Sign out from the client
-
-Add a sign out form to `index.html` and code to `assets/scripts/auth/*` to sign
-out of the API.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt reformat`: reformats all your code in a standard style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+In the future, I'd like to have my get stats function return games won and lost, not just total games played. I'd also like to have better visuals, maybe with some images. These colors are nice and clean, but they're not pretty.
