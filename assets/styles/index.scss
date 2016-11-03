@@ -6,13 +6,8 @@ $red: #f00;
 $blue: #00f;
 
 .active-box {
-  background-color: ($white, 12%);
-}
-
-.active-box:hover {
   background-color: $white;
 }
-
 
 .box {
   border: 1px solid $black;
