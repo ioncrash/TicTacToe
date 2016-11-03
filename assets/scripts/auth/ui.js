@@ -38,7 +38,7 @@ const signInSuccess = (data) => {
     $('.change-pw-o-btn').show();
     $('#show-o-stats').show();
     $('#sign-out-o-button').show();
-    if (currentGame.current.game.over === false) {
+    if (currentGame.current.game.over !== true) {
       gameEvents.joinGame();
     }
   }

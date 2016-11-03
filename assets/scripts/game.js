@@ -1,7 +1,11 @@
 'use strict';
 
-let game;
+let current = {
+  game: {
+    over: true
+  }
+};
 
 module.exports = {
-  game,
+  current,
 };
