@@ -9,7 +9,7 @@ const success = (data) => {
 };
 
 const displayStartButton = function() {
-    $("#start-game-button").removeClass('hidden')
+    $("#start-game-button").removeClass('hidden');
     $("#start-game-button").on('click', function(event) {
       event.preventDefault();
       gameEvents.startGame();

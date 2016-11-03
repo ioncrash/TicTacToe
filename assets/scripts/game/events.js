@@ -86,6 +86,7 @@ const addBoxHandlers = function() {
 
 
 const startGame = function() {
+  event.preventDefault();
   api.createGame().then(ui.startGameSuccess).catch(ui.failure);
   $('.box').text('');
   $('.box').removeClass('x-box');
@@ -104,11 +105,8 @@ const joinGame = function () {
 };
 
 const addHandlers = () => {
-  $("#start-game-button").on('click', function(event) {
-    event.preventDefault();
-    startGame();
-  });
-}
+  $("#start-game-button").on('click', startGame);
+};
 
 module.exports = {
   startGame,
