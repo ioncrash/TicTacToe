@@ -101,7 +101,8 @@ const startGame = function() {
 };
 
 const forfeitGame = () => {
-
+  changePlayer();
+  theyWon();
 };
 
 const joinGame = function () {
