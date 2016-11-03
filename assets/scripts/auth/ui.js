@@ -8,10 +8,6 @@ const success = (data) => {
   console.log(data);
 };
 
-const displayStartButton = function() {
-
-};
-
 const signInSuccess = (data) => {
   if (!store.player_x) {
     store.player_x = {

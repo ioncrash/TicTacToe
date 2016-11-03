@@ -61,8 +61,9 @@ const playerMove = function(index) {
     }
   };
   api.updateBoard(data).then(ui.updateBoardSuccess).catch(ui.failure);
-  if (!currentGame.current.game.over)
-  {
+  if (currentGame.current.game.over) {
+    currentGame.current = null;
+  } else {
     changePlayer();
   }
 };
@@ -120,6 +121,14 @@ const signOutX = () => {
   }
 };
 
+const signOutO = () => {
+  if (currentGame.turn === 'x') {
+    theyWon();
+  } else if (currentGame.turn === 'o') {
+    forfeitGame();
+  }
+};
+
 
 const addHandlers = () => {
   $("#start-game-button").on('click', startGame);
@@ -130,5 +139,6 @@ module.exports = {
   startGame,
   joinGame,
   addHandlers,
+  signOutO,
   signOutX,
 };
