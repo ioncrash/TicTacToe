@@ -22,6 +22,7 @@ $blue: #00f;
   float: left;
   font-size: 83pt;
   height: 85px;
+  line-height: 85px;
   text-align: center;
   vertical-align: middle;
   width: 85px;
@@ -29,6 +30,7 @@ $blue: #00f;
   @media (min-width: 768px) {
     font-size: 100pt;
     height: 112px;
+    line-height: 112px;
     text-align: center;
     vertical-align: middle;
     width: 112px;
@@ -37,6 +39,7 @@ $blue: #00f;
   @media (min-width: 992px) {
     font-size: 150pt;
     height: 160px;
+    line-height: 160px;
     text-align: center;
     vertical-align: middle;
     width: 160px;
@@ -45,6 +48,7 @@ $blue: #00f;
   @media (min-width: 1200px) {
     font-size: 180pt;
     height: 190px;
+    line-height: 190px;
     text-align: center;
     vertical-align: middle;
     width: 190px;
