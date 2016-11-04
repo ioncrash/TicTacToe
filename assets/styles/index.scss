@@ -20,24 +20,33 @@ $blue: #00f;
 .box {
   border: 1px solid $black;
   float: left;
-  font-size: 290pt;
+  font-size: 83pt;
   height: 85px;
   text-align: center;
   vertical-align: middle;
   width: 85px;
 
   @media (min-width: 768px) {
+    font-size: 100pt;
     height: 112px;
+    text-align: center;
+    vertical-align: middle;
     width: 112px;
   }
 
   @media (min-width: 992px) {
+    font-size: 150pt;
     height: 160px;
+    text-align: center;
+    vertical-align: middle;
     width: 160px;
   }
 
   @media (min-width: 1200px) {
+    font-size: 180pt;
     height: 190px;
+    text-align: center;
+    vertical-align: middle;
     width: 190px;
   }
 }
@@ -79,8 +88,6 @@ $blue: #00f;
 .o-box {
   background-color: darken($white, 12%);
   color: darken($blue, 10%);
-  font-size: 290pt;
-  line-height: 300px;
   text-align: center;
   vertical-align: middle;
 }
@@ -111,8 +118,6 @@ $blue: #00f;
 .x-box {
   background-color: darken($white, 12%);
   color: darken($red, 10%);
-  font-size: 290pt;
-  line-height: 300px;
   text-align: center;
   vertical-align: middle;
 }
