@@ -21,24 +21,24 @@ $blue: #00f;
   border: 1px solid $black;
   float: left;
   font-size: 290pt;
-  height: 150px;
+  height: 85px;
   text-align: center;
   vertical-align: middle;
-  width: 150px;
+  width: 85px;
 
   @media (min-width: 768px) {
-    height: 255px;
-    width: 255px;
+    height: 112px;
+    width: 112px;
   }
 
   @media (min-width: 992px) {
-    height: 320px;
-    width: 320px;
+    height: 160px;
+    width: 160px;
   }
 
   @media (min-width: 1200px) {
-    height: 380px;
-    width: 380px;
+    height: 190px;
+    width: 190px;
   }
 }
 
@@ -52,22 +52,22 @@ $blue: #00f;
 }
 
 .container {
-  height: 450px;
-  width: 500px;
+  height: 260px;
+  width: 290px;
 
   @media (min-width: 768px) {
-    height: 765px;
-    width: 800px;
+    height: 400px;
+    width: 420px;
   };
 
   @media (min-width: 992px) {
-    height: 960px;
-    width: 992px;
+    height: 500px;
+    width: 516px;
   };
 
   @media (min-width: 1200px) {
-    height: 1170px;
-    width: 1190px;
+    height: 595px;
+    width: 615px;
   };
 }
 
