@@ -20,23 +20,26 @@ $blue: #00f;
 .box {
   border: 1px solid $black;
   float: left;
-  font-size: 290pt;
+  font-size: 83pt;
   height: 85px;
   text-align: center;
   vertical-align: middle;
   width: 85px;
 
   @media (min-width: 768px) {
+    font-size: 100pt;
     height: 112px;
     width: 112px;
   }
 
   @media (min-width: 992px) {
+    font-size: 150pt;
     height: 160px;
     width: 160px;
   }
 
   @media (min-width: 1200px) {
+    font-size: 180pt;
     height: 190px;
     width: 190px;
   }
