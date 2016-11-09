@@ -103,10 +103,15 @@ $blue: #00f;
 
 .status-row {
   background-color: $black;
+  clear: both;
   color: $white;
   font-size: 30px;
   height: 50px;
   text-align: center;
+
+  @media (max-width: 992px) {
+    padding-top: 50px;
+  };
 }
 
 .start-game-button {
