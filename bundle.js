@@ -255,7 +255,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	module.exports = {
-	  host: 'https://aqueous-atoll-85096.herokuapp.com/'
+	  host: 'https://radiant-caverns-96221.herokuapp.com/'
 	};
 
 /***/ },
@@ -321,7 +321,6 @@ webpackJsonp([0],[
 	  if (store.player_x && store.player_o) {
 	    $('.sign-in-btn').hide();
 	  }
-	  success(data);
 	};
 
 	var showXStatsSuccess = function showXStatsSuccess(data) {
@@ -329,7 +328,6 @@ webpackJsonp([0],[
 	  var games = store.player_x.stats.games;
 	  var numGames = games.length;
 	  $('.status-row').text("X's total games: " + numGames);
-	  success(data);
 	};
 
 	var showOStatsSuccess = function showOStatsSuccess(data) {
@@ -337,24 +335,20 @@ webpackJsonp([0],[
 	  var games = store.player_o.stats.games;
 	  var numGames = games.length;
 	  $('.status-row').text("O's total games: " + numGames);
-	  success(data);
 	};
 
 	var signOutXSuccess = function signOutXSuccess(data) {
 	  store.player_x = null;
 	  $('.sign-in-btn').show();
-	  success(data);
 	};
 
 	var signOutOSuccess = function signOutOSuccess(data) {
 	  store.player_o = null;
 	  $('.sign-in-btn').show();
-	  success(data);
 	};
 
 	var failure = function failure(error) {
-	  $('#messages').text('fail');
-	  console.error(error);
+	  $('.status-row').text('Whoops! Something went wrong! Please try again...');
 	};
 
 	module.exports = {
@@ -619,12 +613,10 @@ webpackJsonp([0],[
 	  $('#start-game-button').hide();
 	  $('#forfeit-button').show();
 	  $('#forfeit-button').removeClass('hidden');
-	  success(data);
 	};
 
 	var updateBoardSuccess = function updateBoardSuccess(data) {
 	  currentGame.current = data;
-	  success(data);
 	};
 
 	module.exports = {
