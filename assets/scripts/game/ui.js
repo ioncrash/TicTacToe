@@ -17,12 +17,10 @@ const startGameSuccess = (data) => {
     $('#start-game-button').hide();
     $('#forfeit-button').show();
     $('#forfeit-button').removeClass('hidden');
-    success(data);
 };
 
 const updateBoardSuccess = (data) => {
   currentGame.current = data;
-  success(data);
 };
 
 module.exports = {
