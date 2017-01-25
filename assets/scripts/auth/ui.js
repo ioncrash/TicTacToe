@@ -77,8 +77,7 @@ const signOutOSuccess = (data) => {
 };
 
 const failure = (error) => {
-  $('#messages').text('fail');
-  console.error(error);
+  $('.status-row').text('Whoops! Something went wrong! Please try again...');
 };
 
 
