@@ -45,7 +45,6 @@ const signInSuccess = (data) => {
   if (store.player_x && store.player_o) {
     $('.sign-in-btn').hide();
   }
-    success(data);
 };
 
 const showXStatsSuccess = function(data) {
@@ -53,7 +52,6 @@ const showXStatsSuccess = function(data) {
   let games = store.player_x.stats.games;
   let numGames = games.length;
   $('.status-row').text("X's total games: " + numGames);
-  success(data);
 };
 
 const showOStatsSuccess = function(data) {
@@ -61,24 +59,20 @@ const showOStatsSuccess = function(data) {
   let games = store.player_o.stats.games;
   let numGames = games.length;
   $('.status-row').text("O's total games: " + numGames);
-  success(data);
 };
 
 const signOutXSuccess = (data) => {
   store.player_x = null;
   $('.sign-in-btn').show();
-  success(data);
 };
 
 const signOutOSuccess = (data) => {
   store.player_o = null;
   $('.sign-in-btn').show();
-  success(data);
 };
 
 const failure = (error) => {
-  $('#messages').text('fail');
-  console.error(error);
+  $('.status-row').text('Whoops! Something went wrong! Please try again...');
 };
 
 
